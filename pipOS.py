@@ -3,7 +3,7 @@ pygame.freetype.init()
 #from SCRIPZ.header import Header
 
 
-os.chdir('C:/users/tdthe/downloads/PIP BOY OS ROOT/Assets/')
+os.chdir('C:/users/tdthe/downloads/PIPBOYOSROOT/Assets/')
 
 pygame.init
 scrx, scry = 876, 700    # was screen_width and screen_height
@@ -13,7 +13,7 @@ clock = pygame.time.Clock()
 running = True
 
 
-backColr = (  0,   0,   0)
+backColr = ( 0, 0, 0)
 #mainColr = pygame.image.load(os.path.join('./ConditionBody0/1.png'))     #(20, 200, 20)
 #mainColr = pygame.transform.scale_by(mainColr, 1)
 colr = (0, 200, 100)
@@ -299,7 +299,7 @@ class deitrix:
 
 
 
-#deitrix.Bootstrap()     #make nirmal when want startup
+deitrix.Bootstrap()     #make nirmal when want startup
 
 
 
