@@ -1,13 +1,13 @@
 import pygame, sys, os, pickle, pygame.freetype, time
+from pygame._sdl2 import Window
 pygame.freetype.init()
 #from SCRIPZ.header import Header
 
-
-os.chdir('C:/users/tdthe/downloads/PIPBOYOSROOT/Assets/')
+os.chdir('Assets/')
 
 pygame.init
 scrx, scry = 876, 700    # was screen_width and screen_height
-screen = pygame.display.set_mode((scrx, scry))
+screen = pygame.display.set_mode((scrx, scry), pygame.NOFRAME)
 pygame.mouse.set_visible(False)
 clock = pygame.time.Clock()
 running = True
