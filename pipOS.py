@@ -7,13 +7,13 @@ os.chdir('Assets/')
 
 pygame.init
 scrx, scry = 876, 700    # was screen_width and screen_height
-screen = pygame.display.set_mode((scrx, scry), pygame.NOFRAME)
+screen = pygame.display.set_mode((scrx, scry), pygame.NOFRAME,)
 pygame.mouse.set_visible(False)
 clock = pygame.time.Clock()
 running = True
 
 
-backColr = ( 0, 0, 0)
+backColr = ( 0, 4, 0)
 #mainColr = pygame.image.load(os.path.join('./ConditionBody0/1.png'))     #(20, 200, 20)
 #mainColr = pygame.transform.scale_by(mainColr, 1)
 colr = (0, 200, 100)
@@ -26,8 +26,8 @@ class rad(pygame.sprite.Sprite):
         super().__init__()
         self.images = []         #color.convert_alpha()
         self.index = 0
-        for num in range(1, 8):
-            img = pygame.image.load(f'sprites/ConditionBody0/{num}.png')
+        for num in range(1, 32):
+            img = pygame.image.load(f'sprites/bodycond0frames/{num}.png')
             self.images.append(img)
             self.images.append(img)
             self.images.append(img)
@@ -43,14 +43,14 @@ class rad(pygame.sprite.Sprite):
         #pygame.image.load(os.path.join('./1.png'))
 
 
-    def update(self, x):
+    def update(self):
 
         self.index = self.index+1
         if self.index >= len(self.images):
             self.index = 0
         self.image = self.images[self.index]
-        self.image.fill((255, 255, 255, 0), special_flags=pygame.BLEND_RGBA_MAX)
-        self.image.fill(colr, special_flags=pygame.BLEND_RGBA_MIN)
+        #self.image.fill((255, 255, 255, 0), special_flags=pygame.BLEND_RGBA_MAX)
+        #self.image.fill(colr, special_flags=pygame.BLEND_RGBA_MIN)
         
         #self.rect.center = (5*(scrx/12), 5*(scry/12))
         self.rect.x = 5*(scrx/12)
@@ -299,17 +299,20 @@ class deitrix:
 
 
 
-deitrix.Bootstrap()     #make nirmal when want startup
+#deitrix.Bootstrap()     #make nirmal when want startup
 
 
 
 
-block_list = pygame.sprite.Group()
-all_sprites_list = pygame.sprite.Group()
+stats_group = pygame.sprite.Group()
+items_group = pygame.sprite.Group()
+data_group = pygame.sprite.Group()
+map_group = pygame.sprite.Group()
+radio_group = pygame.sprite.Group()
 
 rads = rad(20, 15)
 #headd = Header()
-all_sprites_list.add(rads)
+stats_group.add(rads)
 
 
 
@@ -337,14 +340,16 @@ while running:
     #colr = (0, (pos[0] % 255), 100, 255)
     #secolr = (  0,   (pos[1] % 255),   0)
     #rads.image.fill(colr, special_flags=pygame.BLEND_RGBA_MIN)
-    
+    pygame.draw.rect(screen, (255, 100, 5, 20), (200, 300,200, 100))
+    pygame.draw.rect(screen, (5, 100, 255, 20), (250, 350,200, 100))
 
-
-
-
-    all_sprites_list.draw(screen)
+    stats_group.draw(screen)
     GeneralGUI()
-    all_sprites_list.update(4)
+
+    if headerxzs == 1:
+        stats_group.update()
+        
+
     # flip() the display to put your work on screen
     pygame.display.update()
     
