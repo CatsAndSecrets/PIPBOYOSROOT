@@ -291,7 +291,6 @@ class deitrix:
                 pygame.display.update()
 
 
-
 #deitrix.Bootstrap()     #make nirmal when want startup
 
 
