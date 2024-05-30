@@ -29,20 +29,34 @@ while not done:
             done = True
         x, y = pygame.mouse.get_pos()
     if angle == 90 or angle == 0:
-        angledirection = angledirection * -1
+        print("")
+        angledirection = angledirection*-1
     angle += angledirection
     screen.fill(dark_red)  # Transparent background
-    pygame.draw.rect(screen, coler, pygame.Rect(100, 100, 175, 175))
+    #pygame.draw.rect(screen, coler, pygame.Rect(100, 100, 175, 175))
     #angle 
     z = (z+1)%100
     print(angle)
     Imaged = pygame.transform.smoothscale(image, (int(((90 - angle)/90) * image.get_size()[0]),175))
-    if flip == False: #flip doenst do much yet tho
-        for i in range(round((angle/10*-1)), round((angle/10))):
-            screen.blit(Imaged, pygame.Rect(100+angle+i, 100, 175, 175))
-    else:
-        for i in range(round((angle/10*-1)), round((angle/10))):
-            screen.blit(pygame.transform.flip(Imaged, False, True), pygame.Rect(100+angle+i, 100, 175, 175))
+    
+    if angledirection == 1 and flip == False:
+        for i in range(round((angle/10*-1)), round((angle/10))): 
+            screen.blit(pygame.transform.flip(Imaged, False, False), pygame.Rect(100+angle+i, 100, 175, 175))
+    elif angledirection == -1 and flip == False:
+        for i in range(round((angle/10*-1)), round((angle/10))): 
+            screen.blit(pygame.transform.flip(Imaged, True, False), pygame.Rect(100+angle+(round((angle/10))-i), 100, 175, 175))
+        flip = True
+
+        if angledirection == 1 and flip == True:
+            for i in range(round((angle/10*-1)), round((angle/10))): 
+                screen.blit(pygame.transform.flip(Imaged, True, False), pygame.Rect(100+angle+(round((angle/10))-i), 100, 175, 175))
+                print("r")
+        elif angledirection == -1 and flip == True:
+            for i in range(round((angle/10*-1)), round((angle/10))): 
+                screen.blit(pygame.transform.flip(Imaged, False, False), pygame.Rect(100+angle+i, 100, 175, 175)) 
+                print("l")
+            flip = False
+
     pygame.display.update()
     
     clock.tick(32)
