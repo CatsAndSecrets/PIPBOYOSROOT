@@ -16,7 +16,7 @@ running = True
 backColr = ( 0, 4, 0)
 #mainColr = pygame.image.load(os.path.join('./ConditionBody0/1.png'))     #(20, 200, 20)
 #mainColr = pygame.transform.scale_by(mainColr, 1)
-colr = (0, 200, 100)
+colr = (168, 113, 50)
 secolr = (0, 20, 0)
 maintab = 1
 headerxzs = 1    #change when have the dial to be whicherver th edial is pointing to
@@ -26,8 +26,8 @@ class rad(pygame.sprite.Sprite):
         super().__init__()
         self.images = []         #color.convert_alpha()
         self.index = 0
-        for num in range(1, 32):
-            img = pygame.image.load(f'sprites/bodycond0frames/{num}.png')
+        for num in range(1, 8):
+            img = pygame.image.load(f'sprites/ConditionBody0/{num}.png')
             self.images.append(img)
             self.images.append(img)
             self.images.append(img)
@@ -49,8 +49,8 @@ class rad(pygame.sprite.Sprite):
         if self.index >= len(self.images):
             self.index = 0
         self.image = self.images[self.index]
-        #self.image.fill((255, 255, 255, 0), special_flags=pygame.BLEND_RGBA_MAX)
-        #self.image.fill(colr, special_flags=pygame.BLEND_RGBA_MIN)
+        self.image.fill((255, 255, 255, 0), special_flags=pygame.BLEND_RGBA_MAX)
+        self.image.fill(colr, special_flags=pygame.BLEND_RGBA_MIN)
         
         #self.rect.center = (5*(scrx/12), 5*(scry/12))
         self.rect.x = 5*(scrx/12)
@@ -291,7 +291,7 @@ class deitrix:
                 pygame.display.update()
 
 
-#deitrix.Bootstrap()     #make nirmal when want startup
+deitrix.Bootstrap()     #make nirmal when want startup
 
 
 
