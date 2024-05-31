@@ -3,7 +3,7 @@ import win32api
 import win32con
 import win32gui
 import time
-#also has imag espinning for 3ds ish thing. ITS WORKING!!!
+
 
 pygame.init()
 screen = pygame.display.set_mode((800, 600), pygame.NOFRAME) # For borderless, use pygame.NOFRAME
