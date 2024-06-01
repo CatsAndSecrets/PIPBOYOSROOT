@@ -26,8 +26,8 @@ class rad(pygame.sprite.Sprite):
         super().__init__()
         self.images = []         #color.convert_alpha()
         self.index = 0
-        for num in range(1, 8):
-            img = pygame.image.load(f'sprites/ConditionBody0/{num}.png')
+        for num in range(1, 32):
+            img = pygame.image.load(f'sprites/bodycond0frames/{num}.png')
             self.images.append(img)
             self.images.append(img)
             self.images.append(img)
@@ -291,7 +291,7 @@ class deitrix:
                 pygame.display.update()
 
 
-deitrix.Bootstrap()     #make nirmal when want startup
+#deitrix.Bootstrap()     #make nirmal when want startup
 
 
 

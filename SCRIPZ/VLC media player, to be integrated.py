@@ -14,7 +14,7 @@ Window = pygame.display.set_mode((WindowW, WindowH))
 
 Instance = vlc.Instance("--no-xlib")
 MediaPlayer = vlc.MediaPlayer()
-Media = vlc.Media("GIVE ME YOUR TEETH!!! - 1080.mp4")
+Media = vlc.Media("Assets\What can I do for You.mp4")
 MediaPlayer.set_media(Media)
     
 WinID = pygame.display.get_wm_info()['window']
@@ -25,19 +25,20 @@ elif sys.platform == "win32":
     MediaPlayer.set_hwnd(WinID)
 elif sys.platform == "darwin":
     MediaPlayer.set_agl(WinID)
+print(WinID)
 
 # Scale Down Video Stream
 MediaPlayer.video_set_scale(0.2)
 
 #MediaPlayer.play()
-MediaPlayer.video_set_mouse_input(False)
-MediaPlayer.video_set_key_input(False)
+MediaPlayer.video_set_mouse_input(True)
+MediaPlayer.video_set_key_input(True)
 
 Running = True
 playing = "False"
 pause = False
 #isplaying = True
-print("is playsz", MediaPlayer.is_playing())
+#print("is playsz", MediaPlayer.is_playing())
 if MediaPlayer.is_playing():
     print("haea")
 

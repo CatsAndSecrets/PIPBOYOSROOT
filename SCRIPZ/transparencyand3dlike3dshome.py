@@ -3,6 +3,7 @@ import win32api
 import win32con
 import win32gui
 import time
+import math
 
 ##no longer transparent. purely for spinning. i do not hav any idea why i decided for them to be together in the first place. probbably lazyness honestly
 
@@ -42,36 +43,45 @@ class spinnerimageboi():
                 x, y = pygame.mouse.get_pos()
         for x in range(0, skippin):
             if (angletr+skippin*angledirection) > 90 or (angletr+skippin*angledirection) < 0:
-                print("")
+                #print("")
                 angledirection = angledirection*-1
         angletr += angledirection*skippin
         angle += skippin 
         angle = angle%360
       
-        print(angletr)
+        #print(angletr)
     
     
         if 1 < angle and angle < 90:
             Imaged = pygame.transform.smoothscale(image, (int(((90 - angletr)/90) * width),height))
-            for i in range(round((angletr/10*-1)), round((angletr/10))): 
+            for i in range(round((angletr/10*-1)), round((angletr/10)+1)): 
+                
+                
                 screen.blit(pygame.transform.flip(Imaged, False, False), pygame.Rect(xs+angletr+i, ys, width, height))
             
         elif 90 < angle and angle < 180:
             Imaged = pygame.transform.smoothscale(image, (int(((90 - angletr)/90) * width),height))
-            for i in range(round((angletr/10*-1)), round((angletr/10))): 
+            for i in range(round((angletr/10*-1)), round((angletr/10)+1)): 
+                
+                
                 screen.blit(pygame.transform.flip(Imaged, True, False), pygame.Rect(xs+angletr-i, ys, width, height))
         
 
         elif 180 < angle and angle < 270:
             Imaged = pygame.transform.smoothscale(image, (int(((90 - angletr)/90) * width),height))
-            for i in range(round((angletr/10*-1)), round((angletr/10))): 
+            for i in range(round((angletr/10*-1)), round((angletr/10)+1)): 
+                
+                
                 screen.blit(pygame.transform.flip(Imaged, True, False), pygame.Rect(xs+angletr+i, ys, width, height))
             
         elif 270 < angle and angle < 360:
             Imaged = pygame.transform.smoothscale(image, (int(((90 - angletr)/90) * width),height))
-            for i in range(round((angletr/10*-1)), round((angletr/10))): 
-                screen.blit(pygame.transform.flip(Imaged, False, False), pygame.Rect(xs+angletr-i, ys, width, height)) 
-            
+            for i in range(round((angletr/10*-1)), round((angletr/10)+1)): 
+                
+                screen.blit(pygame.transform.flip(Imaged, False, False), pygame.Rect(xs+angletr-i, ys, width, height))
+        elif angle == 1:
+            Imaged = pygame.transform.smoothscale(image, (int(((90 - angletr)/90) * width),height))
+            screen.blit(pygame.transform.flip(Imaged, False, False), pygame.Rect(xs+angletr, ys, width, height))
 
         #pygame.display.update()
     
