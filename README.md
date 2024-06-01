@@ -2,7 +2,7 @@ IM MAKIN A PIP BOY AND FOR IT ME OWN INTERFACE!
 TRYNA MAKE IT AS ACCURATE?FUNCTIONAL AS POSSIBLE
 mostly for leaning stuff
 
-based on 3000 mark iv, from fallout 4.
+*based on 3000 mark iv, from fallout 4.* now not true, much of thos is ti be changredc now
 
 the plan is to be as accurate, mostly to the lore kinda, as possible.
 goal is to look and function as much like the ingame pipboy as possible, but more than that to function as much as it should. so like, i'd want a geiger counter and working holotapes, but id probaly leave out a lot of the items stuff, or maybe repurpose it or something.
