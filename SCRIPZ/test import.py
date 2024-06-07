@@ -14,7 +14,7 @@ while not done:
             done = True
 
     spinnerimageboi.run(f"Assets\sprites\ConditionBody0\{numbr}.png", 100, 100, 50, 50)
-    numbr = numbr % 8 +1
+    numbr = numbr % 8 + 1
     
     pygame.display.update()
     clock.tick(64)
