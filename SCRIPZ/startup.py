@@ -10,8 +10,10 @@ printtime = 0
 binorword = "b"
 amountstartlines = 34
 zfontzs = pygame.freetype.Font(f'fonts/4_$Terminal_Font_Share-TechMono.ttf', 10)
-
-class deitrix(colr, backColr, time):
+colr = 0
+backColr = 0 
+time = 0
+class deitrix():
 
 
 
@@ -44,8 +46,9 @@ class deitrix(colr, backColr, time):
                     #time.sleep(.1)
                     pygame.display.update()
 
-    def Bootstrap():
-        global printtime, amountstartlines, allem, binorword, zfontzs
+    def Bootstrap(colra, backColra, timea):
+        global printtime, amountstartlines, allem, binorword, zfontzs, colr, backColr, time
+        colr, backColr, time = colra, backColra, timea
 
         deitrix.delay_print("01011010111001001011111001110111000010011001001001001001010010100011000100011010101110101011011001001010010001001001")
         deitrix.delay_print("1010000000111110111001010111101011001110100010010010010010100101000110001000101011001101110001100100110")

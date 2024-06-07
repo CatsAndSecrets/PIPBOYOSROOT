@@ -1,6 +1,6 @@
 import pygame, sys, os, pickle, pygame.freetype, time
 from pygame._sdl2 import Window
-from startup.py import deitrix
+from SCRIPZ/startup import deitrix
 pygame.freetype.init()
 #from SCRIPZ.header import Header
 
