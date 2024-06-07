@@ -1,10 +1,10 @@
 import pygame, sys, os, pickle, pygame.freetype, time
 from pygame._sdl2 import Window
-from SCRIPZ/startup import deitrix
+from startup import deitrix
 pygame.freetype.init()
 #from SCRIPZ.header import Header
 
-os.chdir('Assets/')
+os.chdir('../Assets/')
 
 pygame.init
 scrx, scry = 876, 700    # was screen_width and screen_height
